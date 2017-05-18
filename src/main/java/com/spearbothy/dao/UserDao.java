@@ -1,7 +1,7 @@
-package com.spearbothy.web.dao;
+package com.spearbothy.dao;
 
-import com.spearbothy.web.domain.User;
-import com.spearbothy.web.mapper.UserMapper;
+import com.spearbothy.domain.User;
+import com.spearbothy.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

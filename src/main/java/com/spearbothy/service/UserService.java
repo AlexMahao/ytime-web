@@ -1,11 +1,10 @@
-package com.spearbothy.web.service;
+package com.spearbothy.service;
 
-import com.spearbothy.web.dao.UserDao;
-import com.spearbothy.web.domain.User;
+import com.spearbothy.dao.UserDao;
+import com.spearbothy.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**

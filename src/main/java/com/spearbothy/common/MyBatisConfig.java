@@ -1,4 +1,4 @@
-package com.spearbothy.web.common;
+package com.spearbothy.common;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -17,7 +17,7 @@ import java.util.Properties;
  * Created by Alex_MaHao on 2017/5/17.
  */
 @Configuration  // 该注解类似于spring的配置文件
-@MapperScan(basePackages = "com.spearbothy.web.mapper")
+@MapperScan(basePackages = "com.spearbothy.mapper")
 public class MyBatisConfig {
 
     @Autowired // 读取类路径下application.properties文件中的内容

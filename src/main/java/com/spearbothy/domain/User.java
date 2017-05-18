@@ -1,4 +1,4 @@
-package com.spearbothy.web.domain;
+package com.spearbothy.domain;
 
 /**
  * Created by Alex_MaHao on 2017/5/17.

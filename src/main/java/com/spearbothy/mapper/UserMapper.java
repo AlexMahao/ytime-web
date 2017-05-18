@@ -1,7 +1,6 @@
-package com.spearbothy.web.mapper;
+package com.spearbothy.mapper;
 
-import com.spearbothy.web.domain.User;
-import org.mybatis.spring.annotation.MapperScan;
+import com.spearbothy.domain.User;
 
 import java.util.List;
 

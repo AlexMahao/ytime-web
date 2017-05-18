@@ -1,10 +1,8 @@
 package com.spearbothy.web.controller;
 
-import com.spearbothy.web.dao.UserDao;
-import com.spearbothy.web.domain.User;
-import com.spearbothy.web.service.UserService;
+import com.spearbothy.domain.User;
+import com.spearbothy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
