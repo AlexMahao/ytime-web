@@ -13,8 +13,13 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 public class User {
-
-    private String user_id;
+    private String id;
+    private String name;
+    private String nickName;
+    private String mobile;
     private String password;
-    private String username;
+    private String openid;
+    private String accessToken;
+    private String createTime;
+    private String updateTime;
 }
