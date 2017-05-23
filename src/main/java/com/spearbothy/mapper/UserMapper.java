@@ -9,7 +9,12 @@ import java.util.List;
  */
 public interface UserMapper {
 
-    public List<User> findUsers();
+    // 添加用户
+    public void addUser(User user);
 
     public User findUserById(String id);
+
+
+    public void findUserByOpenid(String openId);
+
 }

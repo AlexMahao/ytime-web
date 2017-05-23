@@ -2,9 +2,12 @@ package com.spearbothy.web.controller;
 
 import com.spearbothy.domain.User;
 import com.spearbothy.service.UserService;
+import com.spearbothy.web.exception.BaseException;
+import com.spearbothy.web.exception.ParamsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -21,8 +24,13 @@ public class UserController {
 
     @RequestMapping(value = "/findUsers")
     @ResponseBody
-    public List<User> findUser(){
-        return userService.findUsers();
+    public String findUser(@RequestParam(required = true) int  t,@RequestParam int code){
+        if(code==1){
+            throw new BaseException();
+        }else if( code ==2){
+            throw new ParamsException();
+        }
+        return "";
     }
 
 }

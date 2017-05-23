@@ -15,10 +15,6 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
-    public List<User> findUsers(){
-        return userDao.findUsers();
-    }
-
     public User findUserById(String id){
         return userDao.findUserById(id);
     }

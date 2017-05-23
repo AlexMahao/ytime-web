@@ -17,9 +17,6 @@ public class UserDao implements Serializable {
     @Autowired
     private UserMapper userMapper;
 
-    public List<User> findUsers(){
-        return userMapper.findUsers();
-    }
 
     public User findUserById(String id){
         return userMapper.findUserById(id);
