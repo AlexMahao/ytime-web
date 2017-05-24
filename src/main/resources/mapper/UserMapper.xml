@@ -2,12 +2,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.spearbothy.mapper.UserMapper">
-    <select id="findUsers" resultType="User">
-          SELECT * FROM t_user
-    </select>
 
-    <select id="findUserById" parameterType="String" resultType="User">
+    <resultMap id="user" type="User">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="mobile" property="mobile"/>
+        <result column="password" property="password"/>
+        <result column="openid" property="openid"/>
+        <result column="access_token" property="accessToken"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+
+    </resultMap>
+
+    <select id="findUserById" parameterType="String" resultMap="user">
         SELECT * FROM t_user WHERE id = #{id}
     </select>
+
+    <select id="findUserByName" parameterType="String" resultMap="user">
+        SELECT * FROM t_user WHERE name = #{name}
+    </select>
+
+    <select id="findUserByNameAndPassword" parameterType="User" resultMap="user">
+        SELECT * FROM t_user WHERE name = #{name} AND  password = #{password}
+    </select>
+
+    <select id="findUserByOpenid" parameterType="String" resultMap="user">
+        SELECT * FROM t_user WHERE openid = #{openid}
+    </select>
+
+    <insert id="addUser" parameterType="User">
+        INSERT INTO t_user (id,NAME,nick_name,mobile,PASSWORD,openid,access_token,create_time,update_time)
+	VALUES (#{id},#{name},#{nickName},NULL,#{password},#{openid},#{accessToken},NULL,NULL);
+    </insert>
+
 
 </mapper>

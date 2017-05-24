@@ -20,10 +20,10 @@ public class Result<T> {
     private T data;
 
 
-    public void setResultCode(ResultCode code){
+    public Result<T> setResultCode(ResultCode code){
         this.code = code.code();
         this.message = code.msg();
+        return new Result<>();
     }
-
 
 }

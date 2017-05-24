@@ -9,7 +9,9 @@ public enum ResultCode {
 
     ERROR_DEFAULT(1,"服务器错误"),
 
-    ERROR_REQUEST_PARAMS (2, "参数不合法");
+    ERROR_REQUEST_PARAMS (2, "参数不合法"),
+
+    ERROR_BUSSINESS (3, "业务异常");
 
     private ResultCode(int code, String msg){
         this.code = code;

@@ -18,22 +18,31 @@ import javax.servlet.http.HttpServletRequest;
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
-
     /**
      * 传入参数错误异常处理
      */
     @ExceptionHandler(value = {ParamsException.class, MethodArgumentTypeMismatchException.class, MissingServletRequestParameterException.class})
     @ResponseBody
-    public Result<String> defaultBaseErrorHandler(HttpServletRequest req, Exception e) throws Exception {
+    public Result<String> defaultParamsErrorHandler(HttpServletRequest req, Exception e) throws Exception {
         Result<String> result = new Result<>();
         result.setResultCode(ResultCode.ERROR_REQUEST_PARAMS);
+        return result;
+    }
+
+    @ExceptionHandler(value = BussinessException.class)
+    @ResponseBody
+    public Result<String> defaultBaseErrorHandler(HttpServletRequest req, BussinessException e) throws Exception {
+        Result<String> result = new Result<>();
+        result.setResultCode(ResultCode.ERROR_BUSSINESS);
+        if (!StringUtils.isEmpty(e.getMessage())) {
+            result.setMessage(e.getMessage());
+        }
         e.printStackTrace();
         return result;
     }
 
     /**
-     *  基类异常处理
+     * 基类异常处理
      */
     @ExceptionHandler(value = BaseException.class)
     @ResponseBody
@@ -44,7 +53,6 @@ public class GlobalExceptionHandler {
         return result;
     }
 
-
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
     public Result<String> defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
@@ -53,5 +61,4 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
         return result;
     }
-
 }

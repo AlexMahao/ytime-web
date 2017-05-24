@@ -14,7 +14,9 @@ public interface UserMapper {
 
     public User findUserById(String id);
 
+    public User findUserByOpenid(String openId);
 
-    public void findUserByOpenid(String openId);
+    User findUserByNameAndPassword(User user);
 
+    User findUserByName(String name);
 }
